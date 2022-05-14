@@ -10,23 +10,24 @@ const getRandomGameData = async () => {
     headers: {},
   };
   var result = {};
-
-  await axios(config)
-    .then(function async(response) {
-      const { results } = response.data;
-      const index = Math.floor(Math.random() * results.length + 1);
-      result = results[index];
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  if (result)
-    return {
-      imgUrl: result.background_image,
-      released: result.released,
-      name: result.name,
-      rating: result.rating,
-      platforms: result.platforms,
-    };
+  while (true) {
+    await axios(config)
+      .then(function async(response) {
+        const { results } = response.data;
+        const index = Math.floor(Math.random() * results.length + 1);
+        result = results[index];
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    if (result)
+      return {
+        imgUrl: result.background_image,
+        released: result.released,
+        name: result.name,
+        rating: result.rating,
+        platforms: result.platforms,
+      };
+  }
 };
 export default getRandomGameData;
