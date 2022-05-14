@@ -12,7 +12,7 @@ const ScoreCard = ({ score, gameName, rating }) => {
       <div className='card container'>
         <div className='card-body'>
           <h2>Result</h2>
-          <p>`Name : ${gameName}`</p>
+          <p>Name : {gameName}</p>
           <p>Rating : {rating}</p>
           <p>Score : {score}</p>
 
