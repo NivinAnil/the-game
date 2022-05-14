@@ -6,10 +6,11 @@ const getRandomGameData = async () => {
   const apiKey = process.env.KEY;
   var config = {
     method: "get",
-    url: `https://api.rawg.io/api/games?key=2335a379b5fe41948a10fad8d1bf5afb&page=${page}`,
+    url: `https://api.rawg.io/api/games?key=${apiKey}&page=${page}`,
     headers: {},
   };
   var result = {};
+
   while (true) {
     await axios(config)
       .then(function async(response) {
