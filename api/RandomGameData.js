@@ -20,13 +20,13 @@ const getRandomGameData = async () => {
     .catch(function (error) {
       console.log(error);
     });
-
-  return {
-    imgUrl: result.background_image,
-    released: result.released,
-    name: result.name,
-    rating: result.rating,
-    platforms: result.platforms,
-  };
+  if (result)
+    return {
+      imgUrl: result.background_image,
+      released: result.released,
+      name: result.name,
+      rating: result.rating,
+      platforms: result.platforms,
+    };
 };
 export default getRandomGameData;
