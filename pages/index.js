@@ -32,8 +32,8 @@ export default function Home() {
           rating: rGameData.rating,
           imgUrl: rGameData.imgUrl,
         },
-      }
-      // ,"end-game"
+      },
+      "end-game"
     );
   };
 
